@@ -6,3 +6,19 @@
 
 (ellipsise "The quick brown fox jumps over the lazy dog.")
 ; => "The quick brown ..."
+
+;;;
+
+; Naming Java objects and calling them with '.':
+(def rnd (new java.util.Random))
+(. rnd nextInt) ; calls the no-arg version of nextInt()
+(. rnd nextInt 10) ; calls nextInt(10)
+
+; '.' also works with statics. For instance:
+(. Math PI) ; => 3.141592653589793
+
+; Note: Clojure imports `java.lang` automatically. But for unqualified access to other classes you can do e.g.:
+(import '(java.util Random Locale)
+        '(java.text MessageFormat))
+
+; Note: if you need access to underlying Java docs, you can type something like '(javadoc java.util.URL) in the REPL!
