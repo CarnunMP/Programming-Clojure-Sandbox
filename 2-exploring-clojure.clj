@@ -22,3 +22,19 @@
         '(java.text MessageFormat))
 
 ; Note: if you need access to underlying Java docs, you can type something like '(javadoc java.util.URL) in the REPL!
+
+;;;
+
+; `if` allows for only a single form in each 'branch'. But this can be circumvented with `do`!
+(defn is-small? [number]
+  (if (< number 100)
+    "yes"
+    (do
+      (println "Saw a big number" number)
+      "no")))
+
+(is-small? 200)
+; Saw a big number
+; => "no"
+
+; Note that here, with `do`, the function's side-effect are *explicitly flagged*.
