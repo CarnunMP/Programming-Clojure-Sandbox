@@ -11,3 +11,8 @@
 (take-while (complement #{\a\e\i\o\u}) "the-quick-brown-fox") ; => (\t \h)
 ; Note: the set #{\a\e\i\o\u} is acting as a predicate function, here — and 'complement' is reversing its behavior!
 ; So, it returns true when its argument _isn't_ a vowel.
+
+; After using the sequence funtions on a string, the result is a sequence.
+; If you want to conver back to a string, use (apply str seq):
+(reverse "hello") ; => (\o \l \l \e \h)
+(apply str (reverse "hello")) ; => "olleh"
