@@ -10,3 +10,14 @@
 
 ; Pure functions are truly 'encapsulated': they don't need to hide behind APIs to approximate this desirable behaviour.
 
+;;;
+
+; Remember, you always have (doc ___), in the REPL. For instance:
+  ; (doc take)
+  ; -------------------------
+  ; clojure.core/take
+  ; ([n] [n coll])
+  ;   Returns a lazy sequence of the first n items in coll, or all items if
+  ;   there are fewer than n.  Returns a stateful transducer when
+  ;   no collection is provided.
+  ; nil
