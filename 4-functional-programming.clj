@@ -21,3 +21,12 @@
   ;   there are fewer than n.  Returns a stateful transducer when
   ;   no collection is provided.
   ; nil
+
+; But note: the printer used by the REPL isn't lazy!
+
+; Ooh, and re the printer:
+(time (repeat 10000 1))
+; "Elapsed time: 0.024633 msecs"
+; => (1 1 1 ... 1)
+
+; One to remember!
